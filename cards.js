@@ -1,7 +1,19 @@
 
 
-var cardNum = ["Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"];
-var cardShape = ["Clubs","Spades","Hearts","Diamonds"];
+var cardNum = ["Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"];	// Array of Card Number
+var cardShape = ["Clubs","Spades","Hearts","Diamonds"];								//Array of Card Shape
+var cardDist=[];						//Array of card deck
+var k=0;
+
+for(var i=0;i<cardNum.length;i++){
+	for(var j=0;j<cardShape.length;j++){
+		cardDist[k]= cardNum[i]+" of "+cardShape[j];		
+		k++;
+	}
+}
+
+
+
 
 function Player(name){
 	this.name = name;
@@ -11,7 +23,10 @@ function Player(name){
 }
 
 function playCard(){
-	return(cardNum[Math.floor(Math.random()*cardNum.length)] +" of "+ cardShape[Math.floor(Math.random()*cardShape.length)]);
+	var arrayNum = Math.floor(Math.random()*cardDist.length);
+	var card = cardDist[arrayNum];
+	cardDist.splice(arrayNum,1);
+	return card;
 
 }
 
@@ -27,7 +42,3 @@ var player3 = new Player("Player 3");
 displayCard(player1);
 displayCard(player2);
 displayCard(player3);
-
-
-
-
