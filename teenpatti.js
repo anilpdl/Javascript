@@ -209,9 +209,9 @@ function chkWinner(result1,result2,result3){
 
 
 var myDeck = new deck();
-var p1 = new player("P1");
-var p2 = new player("P2");
-var p3 = new player("P3");
+var p1 = new player("Anil");
+var p2 = new player("Kiran");
+var p3 = new player("Ayush");
 
 
 

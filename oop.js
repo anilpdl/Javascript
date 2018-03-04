@@ -1,4 +1,4 @@
-var cardLabel = ["2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"];	// Array of Card Number
+var cardValue = ["2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"];	// Array of Card Number
 var cardSuit = ["Clubs","Spades","Hearts","Diamonds"];	
 
 class Game {
@@ -27,19 +27,27 @@ class Deck{
 
 	constructor(){
 		this.cards = [];
-		let suits = getSuites();
-		let faceValues = getfaceValue();
+
+		for(var i=0;i<cardSuit.length;i++){
+			for(var j=0;j<cardValue.length;j++){
+				this.cards.push(new Card(j+1,cardValue[j],cardSuit[i]));
+			}
+		}
 
 
 	}
 }
 
  class Card{
- 	constructor(faceValue,suit){
+ 	constructor(cardValue,faceValue,suit){
+ 		this.cardValue = cardValue;
  		this.faceValue = faceValue;
  		this.suit = suit;
  	}
  }
+
+ var myDeck = new Deck();
+ console.log(myDeck);
 
 let teenPatti = new Game('TeenPatti');
 teenPatti.start(3);
