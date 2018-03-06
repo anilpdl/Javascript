@@ -1,0 +1,14 @@
+1. git pull origin(remote name) precompile(branch)
+	-This command fetches the data from remote server and merges it with local files
+
+2. rake assets:precompile
+	-This command requires ruby to run on local server. If the local server does not have ruby 	installed it can be pushed to git by another computer after running the command and then can 	be pulled by others
+
+3. git push heroku master
+	-This command pushes data to the remote server	
+
+4. heroku run rake db:migrate	(data migrate)
+	-This command is used for migration of database
+
+5. heroku run rake db:seed	(1st time only)	((data insert server)
+	-This command is run only during the initial setup and is for seeding the database to the 	server
